@@ -6,6 +6,13 @@
     const {app, remote, BrowserWindow, ipcMain, autoUpdater} = require('electron');
 
 
+    if (require('electron-squirrel-startup')) return;
+
+    const pkg = require('../../package.json')
+
+    const appVersion = pkg.version;
+    const updateFeed = ["http://localhost:9000/updates/latest/", "?v=", appVersion].join("");
+
     let tray = null
     let win = null
     let quitting = false
@@ -14,6 +21,11 @@
     const squirrel = require('./squirrel')
 
     const cmd = args.parseArguments(app, process.argv.slice(1)).squirrelCommand
+
+
+    autoUpdater.setFeedURL(updateFeed);
+    autoUpdater.checkForUpdates()
+
     if (process.platform === 'win32' && squirrel.handleCommand(app, cmd)) {
         return
     }

@@ -1,5 +1,6 @@
 {
   "icon": "resources/Icon.ico",
+  "noMsi": true,
   "tags": [
     "Utility"
   ]

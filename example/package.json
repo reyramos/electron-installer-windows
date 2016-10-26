@@ -23,6 +23,7 @@
     "electron-installer-windows": "*",
     "electron-packager": "*",
     "electron-prebuilt": "*",
+    "electron-squirrel-startup": "^1.0.0",
     "fs-plus": "*",
     "rimraf": "*",
     "shelljs": "^0.7.4",
