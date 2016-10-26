@@ -23,8 +23,10 @@
     const cmd = args.parseArguments(app, process.argv.slice(1)).squirrelCommand
 
 
-    autoUpdater.setFeedURL(updateFeed);
-    autoUpdater.checkForUpdates()
+    // autoUpdater.setFeedURL(updateFeed);
+    // autoUpdater.checkForUpdates()
+
+    console.log('Command ==> ',cmd)
 
     if (process.platform === 'win32' && squirrel.handleCommand(app, cmd)) {
         return
