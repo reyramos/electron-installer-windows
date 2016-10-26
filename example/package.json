@@ -13,11 +13,11 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "node \"./scripts/development.js\"",
-    "exe32": "electron-packager . poopie --platform win32 --arch ia32 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico",
-    "exe64": "electron-packager . poopie --platform win32 --arch x64 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico",
-    "set32": "electron-installer-windows --src dist/poopie-win32-ia32/ --dest dist/installers/ia32/ --config config.json",
-    "set64": "electron-installer-windows --src dist/poopie-win32-x64/ --dest dist/installers/x64/ --config config.json",
-    "build": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
+    "exe32": "electron-packager . poopie --platform win32 --arch ia32 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico --version=\"1.2.5\"",
+    "exe64": "electron-packager . poopie --platform win32 --arch x64 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico --version=\"1.2.5\"",
+    "set32": "electron-installer-windows --src dist/poopie-win32-ia32/ --dest dist/installers/ia32/ --config config.json --version=\"1.2.5\"",
+    "set64": "electron-installer-windows --src dist/poopie-win32-x64/ --dest dist/installers/x64/ --config config.json --version=\"1.2.5\"",
+    "build": "npm run clean && npm run exe32 && npm run set32"
   },
   "dependencies": {
     "electron-installer-windows": "*",
